@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       "Профессиональная ветеринарная помощь вашим питомцам в Москве. Качественные услуги, опытные врачи, современное оборудование.",
     images: [
       {
-        url: "/images/clinic-logo.svg",
+        url: "https://krimsit.ru/images/opengraph-main.png",
         width: 1200,
         height: 630,
         alt: "Здоровая лапка - Ветеринарная клиника",
