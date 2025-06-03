@@ -1,8 +1,8 @@
 version: "3.8"
 services:
-  web:
+  nextjs:
     build: .
-    container_name: zdorovaya-lapka-web
+    container_name: zdorovaya-lapka-nextjs
     ports:
       - "3000:3000"
     restart: unless-stopped
