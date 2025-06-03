@@ -6,10 +6,6 @@ services:
     restart: unless-stopped
     env_file:
       - .env.local
-    environment:
-      - YOOKASSA_SHOP_ID=${YOOKASSA_SHOP_ID}
-      - YOOKASSA_SECRET_KEY=${YOOKASSA_SECRET_KEY}
-      - NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL}
     networks:
       - app-network
 
@@ -37,7 +33,7 @@ services:
       - ./nginx/ssl/conf:/etc/letsencrypt
       - ./nginx/ssl/www:/var/www/certbot
     restart: unless-stopped
-    command: sh -c "trap exit TERM; while :; do certbot renew; sleep 12h; done"
+    command: sh -c "trap exit TERM; while :; do certbot renew && docker exec zdorovaya-lapka-nginx nginx -s reload; sleep 12h; done"
 
 networks:
   app-network:
