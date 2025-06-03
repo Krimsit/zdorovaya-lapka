@@ -1,0 +1,98 @@
+.section {
+  margin-bottom: calc(var(--spacing-unit) * 7.5);
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sectionTitle {
+  color: var(--primary-blue);
+  font-size: 2rem;
+  margin-bottom: calc(var(--spacing-unit) * 3);
+  border-bottom: 3px solid var(--light-blue);
+  padding-bottom: calc(var(--spacing-unit) * 1.25);
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent-blue);
+  border-radius: var(--border-radius-small);
+}
+
+.servicesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: calc(var(--spacing-unit) * 3);
+}
+
+.serviceCard {
+  background: linear-gradient(135deg, var(--light-blue) 0%, #f0f8ff 100%);
+  border-radius: var(--border-radius-large);
+  padding: calc(var(--spacing-unit) * 3.5);
+  transition: all 0.3s ease;
+  box-shadow: var(--elevation-2);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.serviceCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-blue), var(--accent-blue));
+  border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
+}
+
+.serviceCard::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background-color: var(--primary-blue);
+  opacity: 0.05;
+  border-radius: 100% 0 0 0;
+}
+
+.serviceCard:hover {
+  transform: translateY(-7px) scale(1.02);
+  box-shadow: var(--elevation-4);
+  background: linear-gradient(135deg, #e3f0ff 0%, #ffffff 100%);
+}
+
+.serviceName {
+  color: var(--primary-blue);
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
+  font-size: 1.3rem;
+  position: relative;
+  padding-left: calc(var(--spacing-unit) * 1.5);
+}
+
+.serviceDescription {
+  margin-bottom: calc(var(--spacing-unit) * 2);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.servicePrice {
+  font-weight: bold;
+  color: var(--accent-blue);
+  font-size: 1.2rem;
+  text-align: right;
+  margin-top: calc(var(--spacing-unit) * 1.5);
+}

@@ -1,0 +1,118 @@
+.section {
+  margin-bottom: calc(var(--spacing-unit) * 7.5);
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sectionTitle {
+  color: var(--primary-blue);
+  font-size: 2rem;
+  margin-bottom: calc(var(--spacing-unit) * 3);
+  border-bottom: 3px solid var(--light-blue);
+  padding-bottom: calc(var(--spacing-unit) * 1.25);
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent-blue);
+  border-radius: var(--border-radius-small);
+}
+
+.contactInfo {
+  background-color: var(--light-blue);
+  padding: calc(var(--spacing-unit) * 4);
+  border-radius: var(--border-radius-large);
+  margin-bottom: calc(var(--spacing-unit) * 4);
+  box-shadow: var(--elevation-2);
+  position: relative;
+  overflow: hidden;
+}
+
+.contactInfo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background-color: var(--primary-blue);
+  opacity: 0.05;
+  border-radius: 100% 0 0 0;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: calc(var(--spacing-unit) * 2);
+  padding: calc(var(--spacing-unit) * 1.5);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: var(--border-radius-medium);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.contactItem:hover {
+  transform: translateX(5px);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.contactIcon {
+  margin-right: calc(var(--spacing-unit) * 1.5);
+  color: var(--primary-blue);
+}
+
+.socialLinks {
+  display: flex;
+  gap: calc(var(--spacing-unit) * 2.5);
+  margin-top: calc(var(--spacing-unit) * 2.5);
+  flex-wrap: wrap;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  color: var(--primary-blue);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 1.5);
+  border-radius: var(--border-radius-medium);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.socialLink:hover {
+  color: var(--accent-blue);
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-3px);
+  box-shadow: var(--elevation-1);
+}
+
+.socialHeading {
+  margin-top: calc(var(--spacing-unit) * 4);
+  margin-bottom: calc(var(--spacing-unit) * 2);
+  color: var(--primary-blue);
+  font-size: 1.3rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: calc(var(--spacing-unit) * 0.75);
+}
+
+.socialHeading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--accent-blue);
+  border-radius: var(--border-radius-small);
+}

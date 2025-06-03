@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="300" viewBox="0 0 500 300">
+  <!-- Background -->
+  <rect width="500" height="300" fill="#e8f1fa" />
+
+  <!-- Cat (left side) -->
+  <g transform="translate(100, 100)">
+    <!-- Cat body -->
+    <ellipse cx="80" cy="120" rx="70" ry="50" fill="#8B7D7B" />
+
+    <!-- Cat head -->
+    <circle cx="80" cy="60" r="40" fill="#8B7D7B" />
+
+    <!-- Cat ears -->
+    <polygon points="50,30 65,55 35,55" fill="#8B7D7B" />
+    <polygon points="110,30 125,55 95,55" fill="#8B7D7B" />
+
+    <!-- Cat face -->
+    <circle cx="65" cy="50" r="5" fill="#000000" /> <!-- Left eye -->
+    <circle cx="95" cy="50" r="5" fill="#000000" /> <!-- Right eye -->
+    <polygon points="80,60 75,70 85,70" fill="#FFC0CB" /> <!-- Nose -->
+    <path d="M75,70 Q80,80 85,70" stroke="#000000" fill="none" stroke-width="1" /> <!-- Mouth -->
+    <path d="M65,65 Q55,55 45,60" stroke="#000000" fill="none" stroke-width="1" /> <!-- Left whisker 1 -->
+    <path d="M65,70 Q55,70 45,75" stroke="#000000" fill="none" stroke-width="1" /> <!-- Left whisker 2 -->
+    <path d="M65,75 Q55,85 45,90" stroke="#000000" fill="none" stroke-width="1" /> <!-- Left whisker 3 -->
+    <path d="M95,65 Q105,55 115,60" stroke="#000000" fill="none" stroke-width="1" /> <!-- Right whisker 1 -->
+    <path d="M95,70 Q105,70 115,75" stroke="#000000" fill="none" stroke-width="1" /> <!-- Right whisker 2 -->
+    <path d="M95,75 Q105,85 115,90" stroke="#000000" fill="none" stroke-width="1" /> <!-- Right whisker 3 -->
+
+    <!-- Cat tail -->
+    <path d="M20,120 Q0,80 20,60" stroke="#8B7D7B" fill="#8B7D7B" stroke-width="15" />
+  </g>
+
+  <!-- Dog (right side) -->
+  <g transform="translate(250, 100)">
+    <!-- Dog body -->
+    <ellipse cx="80" cy="120" rx="70" ry="50" fill="#D2B48C" />
+
+    <!-- Dog head -->
+    <circle cx="80" cy="60" r="40" fill="#D2B48C" />
+
+    <!-- Dog ears -->
+    <ellipse cx="45" cy="30" rx="15" ry="25" fill="#D2B48C" />
+    <ellipse cx="115" cy="30" rx="15" ry="25" fill="#D2B48C" />
+
+    <!-- Dog face -->
+    <circle cx="65" cy="50" r="5" fill="#000000" /> <!-- Left eye -->
+    <circle cx="95" cy="50" r="5" fill="#000000" /> <!-- Right eye -->
+    <ellipse cx="80" cy="70" rx="10" ry="5" fill="#000000" /> <!-- Nose -->
+    <path d="M80,75 Q80,90 60,85" stroke="#000000" fill="none" stroke-width="1" /> <!-- Mouth left -->
+    <path d="M80,75 Q80,90 100,85" stroke="#000000" fill="none" stroke-width="1" /> <!-- Mouth right -->
+
+    <!-- Dog tail -->
+    <path d="M150,120 Q170,100 160,80" stroke="#D2B48C" fill="#D2B48C" stroke-width="10" />
+  </g>
+
+  <!-- Sign -->
+  <rect x="200" y="30" width="100" height="30" fill="#ffffff" stroke="#1e5b94" stroke-width="2" />
+  <text x="250" y="50" font-family="Arial" font-size="12" text-anchor="middle" fill="#1e5b94">Здоровая лапка</text>
+
+  <!-- Paw Prints -->
+  <g transform="translate(50, 250) scale(0.5)">
+    <circle cx="10" cy="10" r="8" fill="#1e5b94" />
+    <circle cx="30" cy="0" r="8" fill="#1e5b94" />
+    <circle cx="50" cy="10" r="8" fill="#1e5b94" />
+    <ellipse cx="30" cy="30" rx="20" ry="15" fill="#1e5b94" />
+  </g>
+
+  <g transform="translate(400, 250) scale(0.5)">
+    <circle cx="10" cy="10" r="8" fill="#1e5b94" />
+    <circle cx="30" cy="0" r="8" fill="#1e5b94" />
+    <circle cx="50" cy="10" r="8" fill="#1e5b94" />
+    <ellipse cx="30" cy="30" rx="20" ry="15" fill="#1e5b94" />
+  </g>
+</svg>
