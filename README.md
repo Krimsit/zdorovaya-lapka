@@ -76,30 +76,43 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Docker Setup
 
-This project includes Docker configuration for containerized deployment.
+This project includes Docker configuration for containerized deployment with Nginx as a reverse proxy and Certbot for SSL certificate management.
 
 ### Prerequisites
 
 - [Docker](https://docs.docker.com/get-docker/)
-- [Docker Compose](https://docs.docker.com/compose/install/) (optional, for easier deployment)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- A domain name pointing to your server
 
-### Building and Running with Docker
+### SSL Configuration with Certbot
 
-To build and run the application using Docker:
+This project uses Certbot for automatic SSL certificate management. Before starting the application for the first time, you need to initialize the SSL certificates:
+
+1. Edit the `init-letsencrypt.sh` script:
+   - Update the `domains` array with your domain names
+   - Add your email address to the `email` variable (recommended for renewal notifications)
+   - Set `staging=1` for testing (to avoid rate limits) or `staging=0` for production
+
+2. Run the initialization script:
+   ```bash
+   ./init-letsencrypt.sh
+   ```
+
+3. Start the application:
+   ```bash
+   docker-compose up -d
+   ```
+
+Certificates are automatically renewed by the Certbot container. No manual intervention is required for certificate renewal.
+
+### Building and Running with Docker Compose
+
+For deployment with SSL:
 
 ```bash
-# Build the Docker image
-docker build -t zdorovaya-lapka .
+# Initialize SSL certificates (first time only)
+./init-letsencrypt.sh
 
-# Run the container
-docker run -p 3000:3000 zdorovaya-lapka
-```
-
-### Using Docker Compose
-
-For a simpler deployment, you can use Docker Compose:
-
-```bash
 # Build and start the application
 docker-compose up -d
 
@@ -110,7 +123,23 @@ docker-compose logs -f
 docker-compose down
 ```
 
-The application will be available at [http://localhost:3000](http://localhost:3000).
+The application will be available at your domain via HTTPS.
+
+### Troubleshooting SSL
+
+If you encounter issues with SSL certificates:
+
+1. Check the Certbot logs:
+   ```bash
+   docker-compose logs certbot
+   ```
+
+2. Check the Nginx logs:
+   ```bash
+   docker-compose logs nginx
+   ```
+
+3. Verify that your domain is properly pointing to your server's IP address
 
 ## Deploy on Vercel
 
