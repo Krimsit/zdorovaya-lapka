@@ -50,6 +50,37 @@ After modifying the XLSX file, restart the development server to see the changes
 npm run dev
 ```
 
+## Payment Integration with YooKassa
+
+This project includes integration with the YooKassa payment system. Users can click on the "Оплатить" button for any service to initiate a payment process.
+
+### Configuration
+
+To enable payments, you need to set up YooKassa API credentials in your environment variables:
+
+1. Create a `.env.local` file in the root directory with the following variables:
+   ```
+   YOOKASSA_SHOP_ID=<Your YooKassa shop ID>
+   YOOKASSA_SECRET_KEY=<Your YooKassa secret key>
+   NEXT_PUBLIC_SITE_URL=<Your site URL for return after payment>
+   ```
+
+2. Replace the placeholder values with your actual YooKassa credentials:
+   - `YOOKASSA_SHOP_ID`: Your shop identifier from YooKassa dashboard
+   - `YOOKASSA_SECRET_KEY`: Your secret API key from YooKassa dashboard
+   - `NEXT_PUBLIC_SITE_URL`: The URL where users will be redirected after payment
+
+### Payment Flow
+
+1. User clicks the "Оплатить" button on a service card
+2. The application sends a request to the YooKassa API to create a payment
+3. User is redirected to the YooKassa payment page
+4. After completing the payment, user is redirected back to the success page on your site
+
+### Testing Payments
+
+For testing purposes, YooKassa provides a sandbox environment. Make sure to use sandbox credentials during development.
+
 ## Code Quality and Formatting
 
 This project uses [Biome](https://biomejs.dev/) for code formatting and linting. Biome is a fast, modern toolchain for web projects that aims to provide functionality similar to Prettier and ESLint but with improved performance and developer experience.
@@ -83,6 +114,25 @@ This project includes Docker configuration for containerized deployment with Ngi
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 - A domain name pointing to your server
+
+### Environment Variables
+
+This project requires several environment variables to be set for the YooKassa payment integration. These variables are passed to the Docker containers through the docker-compose.yml file.
+
+1. Copy the `.env.example` file to `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Edit the `.env` file with your actual values:
+   ```
+   YOOKASSA_SHOP_ID=your_shop_id
+   YOOKASSA_SECRET_KEY=your_secret_key
+   NEXT_PUBLIC_YOOKASSA_IDEMPOTENCE_KEY_PREFIX=zdorovaya-lapka
+   NEXT_PUBLIC_SITE_URL=https://your-domain.com/payment/success
+   ```
+
+The docker-compose.yml file is configured to read these environment variables from the `.env` file and pass them to the NextJS container.
 
 ### SSL Configuration with Certbot
 

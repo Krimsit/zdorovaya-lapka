@@ -1,4 +1,5 @@
 import { readServicesFromXLSX } from "@/data/services";
+import ServiceCard from "./ServiceCard";
 import styles from "./styles.module.css";
 
 export default async function Services() {
@@ -12,11 +13,12 @@ export default async function Services() {
       <h2 className={styles.sectionTitle}>Наши услуги</h2>
       <div className={styles.servicesList}>
         {services.map((service) => (
-          <div key={service.id} className={styles.serviceCard}>
-            <h3 className={styles.serviceName}>{service.name}</h3>
-            <p className={styles.serviceDescription}>{service.description}</p>
-            <p className={styles.servicePrice}>{service.price} руб.</p>
-          </div>
+          <ServiceCard
+            key={service.id}
+            name={service.name}
+            description={service.description}
+            price={service.price}
+          />
         ))}
       </div>
     </section>

@@ -16,6 +16,9 @@
       "style": {
         "useConst": "error",
         "noNegationElse": "error"
+      },
+      "a11y": {
+        "useKeyWithClickEvents": "off"
       }
     }
   },

@@ -95,4 +95,34 @@
   font-size: 1.2rem;
   text-align: right;
   margin-top: calc(var(--spacing-unit) * 1.5);
+  margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.paymentButton {
+  display: block;
+  width: 100%;
+  padding: calc(var(--spacing-unit) * 1.5);
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-medium);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  margin-top: calc(var(--spacing-unit) * 2);
+  box-shadow: var(--elevation-1);
+}
+
+.paymentButton:hover {
+  background-color: var(--accent-blue);
+  box-shadow: var(--elevation-2);
+  transform: translateY(-2px);
+}
+
+.paymentButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
